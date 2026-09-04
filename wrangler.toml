@@ -1,0 +1,10 @@
+name = "voidzxc-cv"
+compatibility_date = "2026-09-04"
+workers_dev = true
+
+[assets]
+directory = "./"
+
+[[routes]]
+pattern = "voidzxc.cv"
+custom_domain = true

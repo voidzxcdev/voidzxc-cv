@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Semion | voidzxc.cv</title>
+    <title>Semion | FS Developer</title>
     <meta
       name="description"
-      content="Hi, I’m Semion (voidzxc). I’m a software developer in Germany. I work on a B2B SaaS product and on applied research in LLMs and agents."
+      content="Semion (voidzxc). Full-stack developer. Currently building Ackord."
     />
-    <meta name="theme-color" content="#12141a" />
-    <meta property="og:title" content="Semion | voidzxc.cv" />
+    <meta name="theme-color" content="#0C0A09" />
+    <meta property="og:title" content="Semion | FS Developer" />
     <meta
       property="og:description"
-      content="Software developer in Germany. Building B2B SaaS, researching LLMs and agents."
+      content="Full-stack developer. Currently building Ackord."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://voidzxc.cv" />
     <meta property="og:image" content="https://voidzxc.cv/mark.jpg" />
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="canonical" href="https://voidzxc.cv/" />
+    <link rel="icon" href="favicon.ico?v=square" sizes="any" />
+    <link rel="icon" href="favicon.png?v=square" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=square" />
     <link
       rel="preload"
       href="fonts/geist-sans-500.woff2"
@@ -28,61 +29,234 @@
       crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = stored || "dark";
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
-    <div class="grain" aria-hidden="true"></div>
 
-    <div class="frame">
-      <header class="mast">
-        <p class="wordmark">voidzxc</p>
-        <a class="btn" href="https://github.com/voidzxcdev" rel="me">GitHub</a>
+    <main id="content" class="page">
+      <header class="intro">
+        <div class="name-row">
+          <h1><span data-greet>Hey</span>, I’m Semion</h1>
+          <button
+            class="theme-btn"
+            type="button"
+            data-theme-toggle
+            aria-label="Switch to light theme"
+          >
+            <i data-feather="sun"></i>
+          </button>
+        </div>
+        <p class="role">Full-Stack Developer</p>
+        <p class="meta">
+          <span class="place">
+            <i data-feather="map-pin"></i>
+            Berlin, Germany
+          </span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span class="building">
+            Currently building
+            <a
+              class="build-box"
+              href="https://ackord.app/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >Ackord.app</a>
+          </span>
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://github.com/voidzxcdev?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="me noopener"
+              aria-label="GitHub"
+            >
+              <i data-feather="github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/thevoidzxc?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="me noopener"
+              aria-label="X"
+            >
+              <span class="mark" style="--mark: url('icons/x.svg')"></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://cursor.com/@voidzxc?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="me noopener"
+              aria-label="Cursor"
+            >
+              <span class="mark" style="--mark: url('icons/cursor.svg')"></span>
+            </a>
+          </li>
+        </ul>
       </header>
 
-      <main id="content">
-        <section class="hero">
-          <div class="hero-copy">
-            <h1 class="rise" style="--i: 0">Semion</h1>
-            <p class="lede rise" style="--i: 1">
-              Building B2B SaaS, researching LLMs and agents
-            </p>
-            <p class="place rise" style="--i: 2">Berlin, Germany</p>
-          </div>
-          <div class="mark-shell rise" style="--i: 3">
-            <img
-              class="mark"
-              src="mark.jpg"
-              width="132"
-              height="132"
-              alt="Pixel portrait of a hooded figure"
-            />
-          </div>
-        </section>
-
-        <p class="about rise" style="--i: 4">
-          Hi, I’m Semion (voidzxc). I’m a software developer in Germany. I work
-          on a B2B SaaS product and on applied research in LLMs and agents.
+      <section class="block" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I write the interface, the backend, and the path between them. Right
+          now that work is Ackord, a two-sided credit ack cabinet. A credit
+          closes a named incident.
         </p>
+      </section>
 
-        <article class="work rise" style="--i: 5">
-          <div class="work-core">
-            <h2>Ackord</h2>
-            <p>
-              B2B tool for SLA and goodwill credit claims between vendors and
-              customers.
-            </p>
-            <p class="now">Shipping the first public version</p>
-          </div>
-        </article>
-
-        <ul class="tools rise" style="--i: 6">
-          <li>Cursor</li>
-          <li>Grok Bot</li>
-          <li>OpenCode</li>
-          <li>Hermes Agent</li>
-          <li>Devin</li>
+      <section class="block" aria-labelledby="stack-heading">
+        <h2 id="stack-heading">Stack</h2>
+        <ul class="marks">
+          <li>
+            <a
+              href="https://www.typescriptlang.org/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/typescript.svg')"></span>
+              TypeScript
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/javascript.svg')"></span>
+              JavaScript
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/html5.svg')"></span>
+              HTML
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/css3.svg')"></span>
+              CSS
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.python.org/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/python.svg')"></span>
+              Python
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.rust-lang.org/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/rust.svg')"></span>
+              Rust
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.postgresql.org/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/postgresql.svg')"></span>
+              SQL
+            </a>
+          </li>
         </ul>
-      </main>
-    </div>
+        <ul class="marks tools">
+          <li>
+            <a
+              href="https://cursor.com/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/cursor.svg')"></span>
+              Cursor
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://grok.com/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/grok.svg')"></span>
+              Grok Bot
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://opencode.ai/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/opencode.svg')"></span>
+              OpenCode
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://nousresearch.com/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/hermes.svg')"></span>
+              Hermes Agent
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://devin.ai/?utm_source=voidzxc.cv"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="mark" style="--mark: url('icons/devin.svg')"></span>
+              Devin
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="block" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <a
+          class="work"
+          href="https://ackord.app/?utm_source=voidzxc.cv"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="work-name">Ackord</span>
+          <span class="work-copy">Two-sided credit ack cabinet. Credit closes a named incident.</span>
+        </a>
+      </section>
+    </main>
+
+    <script src="feather.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

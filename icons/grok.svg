@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img">
+  <title>Grok</title>
+  <g fill="currentColor">
+    <rect
+      x="12.35"
+      y="5.15"
+      width="8.4"
+      height="2.55"
+      rx="1.25"
+      transform="rotate(54.5 16.55 6.425)"
+    />
+    <rect
+      x="4.85"
+      y="8.85"
+      width="8.4"
+      height="2.55"
+      rx="1.25"
+      transform="rotate(54.5 9.05 10.125)"
+    />
+  </g>
+</svg>

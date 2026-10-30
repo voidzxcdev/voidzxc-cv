@@ -19,6 +19,37 @@ export default {
     if (url.pathname === "/dashboard" || url.pathname.startsWith("/dashboard/")) {
       return handleDash(request, env, url);
     }
+    // Serve cleaned index from GitHub until the next full assets deploy.
+    if (
+      (url.pathname === "/" || url.pathname === "/index.html") &&
+      (request.method === "GET" || request.method === "HEAD")
+    ) {
+      const remote = await fetch(
+        "https://raw.githubusercontent.com/voidzxcdev/voidzxc-cv/main/index.html",
+        { cf: { cacheTtl: 60, cacheEverything: true } }
+      );
+      if (remote.ok) {
+        const { vid, header } = visitor(request);
+        if (isPageView(request, url)) {
+          ctx.waitUntil(recordView(env, request, url, vid, "voidzxc.cv"));
+        }
+        let htmlBody = await remote.text();
+        let res = new Response(request.method === "HEAD" ? null : htmlBody, {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=60",
+          },
+        });
+        res = await applyPreviewCard(request, res);
+        if (header && isPageView(request, url)) {
+          const out = new Response(res.body, res);
+          out.headers.append("Set-Cookie", header);
+          return out;
+        }
+        return res;
+      }
+    }
     let res = await env.ASSETS.fetch(request);
     const { vid, header } = visitor(request);
     if (isPageView(request, url)) {
